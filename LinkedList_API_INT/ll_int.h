@@ -8,23 +8,28 @@ typedef struct Node {
     /* store an integer value */
     int data;
     /* link to next node */
-    Node *link;
+    struct Node *link;
 } Node;
 
 /* Append a value to Linked List */
-void append_ll_int();
+void append_ll_int(const int data);
 
 /* Append a value at begining of the Linked List */
-void addatbegin_ll_int();
+void addatbegin_ll_int(const int data);
 
-/* Append a value at the end of Linked List */
-void addatafter_ll_int();
+/* Append a value at the given location of Linked List */
+void addatloc_ll_int(const int data, const int loc);
+
+/* Append a value at the middle of Linked List */
+void addatlmid_ll_int(const int data);
 
 /* Display length of the Linked List */
-void length_ll_int();
+int length_ll_int();
 
 /* Display elements of the Linked List */
 void display_ll_int();
 
 /* Delete a node in the Linked List */
-void delete_ll_int();
+void delete_ll_int(const int loc);
+
+#endif
