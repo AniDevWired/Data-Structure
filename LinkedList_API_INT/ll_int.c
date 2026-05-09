@@ -20,7 +20,6 @@ void append_ll_int(const int data) {
             newNode = newNode->link;
         }
         newNode->link = temp;
-        
     }
 }
 
