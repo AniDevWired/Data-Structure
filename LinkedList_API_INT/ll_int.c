@@ -149,3 +149,28 @@ void delete_ll_int(const int loc) {
     }
     
 }
+
+void swapatloc_ll_int(const int loc) {
+    int c = loc;
+
+    if(c < 1 || c >= length_ll_int()) {
+        printf("Invalid location!!\n\n");
+        return;
+    }
+
+    Node *p, *q, *r;
+
+    p=root;
+    while (c > 2) {
+        p = p->link;
+        c--;
+    }
+
+    q = p->link;
+    r = q->link;
+    
+
+    q->link = r->link;
+    r->link = q;
+    p->link = r;
+}

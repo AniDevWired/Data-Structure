@@ -32,4 +32,7 @@ void display_ll_int();
 /* Delete a node in the Linked List */
 void delete_ll_int(const int loc);
 
+/* Swap two adjacent nodes in the Linked List */
+void swapatloc_ll_int(const int loc);
+
 #endif

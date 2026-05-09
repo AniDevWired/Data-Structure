@@ -16,6 +16,7 @@ void LL_addatloc(void);
 int LL_length(void);
 void LL_display(void);
 void LL_delete(void);
+void LL_swapatloc(void);
 
 int main(void) {
 
@@ -29,40 +30,66 @@ int main(void) {
         printf("5. Length\n");
         printf("6. Display\n");
         printf("7. Delete\n");
-        printf("8. Exit\n");
+        printf("8. Swap at loc\n");
+        printf("9. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &ch);
 
         switch (ch) {
             case 1: 
+                printf("\n");
                 LL_append();
+                printf("The linked list is: ");
+                LL_display();
                 break;
 
-            case 2: 
+            case 2:
+                printf("\n");
                 LL_addatbegin();
+                printf("The linked list is: ");
+                LL_display();
                 break;
 
             case 3: 
+                printf("\n");
                 LL_addatloc();
+                printf("The linked list is: ");
+                LL_display();
                 break;
 
-            case 4: 
+            case 4:
+                printf("\n");
                 LL_addatmid();
+                printf("The linked list is: ");
+                LL_display();
                 break;
 
             case 5:  
                 printf("\nThe length of the linked list is: %d\n\n", LL_length());
                 break;
 
-            case 6:  
+            case 6:
+                printf("\nThe linked list is: ");
                 LL_display();
                 break;
 
-            case 7:  
+            case 7:
+                printf("\n");
                 LL_delete();
+                printf("The linked list is: ");
+                LL_display();
                 break;
 
-            case 8: 
+            case 8:
+                printf("\n");
+                LL_swapatloc();
+                printf("The linked list is: ");
+                LL_display();
+                break;
+
+            case 9:
+                printf("\nThe linked list is: ");
+                LL_display();
                 exit(1);
                 break;
             
@@ -222,4 +249,31 @@ void LL_delete(void) {
         q->link = NULL;
         free(q);
     }
+}
+
+void LL_swapatloc(void) {
+    int loc;
+    printf("Enter location: ");
+    scanf(" %d", &loc);
+
+    if(loc < 1 || loc >= LL_length()) {
+        printf("Invalid location!!\n\n");
+        return;
+    }
+
+    Node *p, *q, *r;
+
+    p=root;
+    while (loc > 2) {
+        p = p->link;
+        loc--;
+    }
+
+    q = p->link;
+    r = q->link;
+    
+
+    q->link = r->link;
+    r->link = q;
+    p->link = r;
 }

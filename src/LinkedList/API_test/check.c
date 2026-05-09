@@ -17,7 +17,8 @@ int main(void) {
         printf("5. Length\n");
         printf("6. Display\n");
         printf("7. Delete\n");
-        printf("8. Exit\n");
+        printf("8. Swap at loc\n");
+        printf("9. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &ch);
 
@@ -68,6 +69,13 @@ int main(void) {
                 break;
 
             case 8: 
+                printf("Enter a location: ");
+                scanf(" %d", &loc);
+                swapatloc_ll_int(loc);
+                printf("\n");
+                break;
+
+            case 9: 
                 exit(1);
                 break;
             
